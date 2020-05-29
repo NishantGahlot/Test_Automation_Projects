@@ -1,63 +1,442 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_Computer_Vision" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="TC_Computer_Vision_1"
- xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" 
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
- xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
- xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" 
- xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" 
- xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" 
- xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" 
- xmlns:ut="clr-namespace:UiPath.Testing;assembly=UiPath.Testing"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <TextExpression.NamespacesForImplementation>
-        <sco:Collection x:TypeArguments="x:String">
-            <x:String>System.Activities</x:String>
-            <x:String>System.Activities.Statements</x:String>
-            <x:String>System.Activities.Expressions</x:String>
-            <x:String>System.Activities.Validation</x:String>
-            <x:String>System.Activities.XamlIntegration</x:String>
-            <x:String>Microsoft.VisualBasic</x:String>
-            <x:String>Microsoft.VisualBasic.Activities</x:String>
-            <x:String>System</x:String>
-            <x:String>System.Collections</x:String>
-            <x:String>System.Collections.Generic</x:String>
-            <x:String>System.Data</x:String>
-            <x:String>System.Diagnostics</x:String>
-            <x:String>System.Drawing</x:String>
-            <x:String>System.IO</x:String>
-            <x:String>System.Linq</x:String>
-            <x:String>System.Net.Mail</x:String>
-            <x:String>System.Xml</x:String>
-            <x:String>System.Xml.Linq</x:String>
-            <x:String>UiPath.Core</x:String>
-            <x:String>UiPath.Core.Activities</x:String>
-            <x:String>System.Windows.Markup</x:String>
-        </sco:Collection>
-    </TextExpression.NamespacesForImplementation>
-    <TextExpression.ReferencesForImplementation>
-        <sco:Collection x:TypeArguments="AssemblyReference">
-            <AssemblyReference>System.Activities</AssemblyReference>
-            <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-            <AssemblyReference>mscorlib</AssemblyReference>
-            <AssemblyReference>System.Data</AssemblyReference>
-            <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-            <AssemblyReference>System</AssemblyReference>
-            <AssemblyReference>System.Drawing</AssemblyReference>
-            <AssemblyReference>System.Core</AssemblyReference>
-            <AssemblyReference>System.Xml</AssemblyReference>
-            <AssemblyReference>System.Xml.Linq</AssemblyReference>
-            <AssemblyReference>PresentationFramework</AssemblyReference>
-            <AssemblyReference>WindowsBase</AssemblyReference>
-            <AssemblyReference>PresentationCore</AssemblyReference>
-            <AssemblyReference>System.Xaml</AssemblyReference>
-            <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-            <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-        </sco:Collection>
-    </TextExpression.ReferencesForImplementation>
-    <Sequence DisplayName="TC_Computer_Vision" sap2010:WorkflowViewState.IdRef="Sequence_1">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_Computer_Vision" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="910,902" sap2010:WorkflowViewState.IdRef="TC_Computer_Vision_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="58">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.Enums</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.ValidationStationAdapters</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.Abbyy.Activities</x:String>
+      <x:String>UiPath.MicrosoftVision</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.MobileAutomation</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Abbyy.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Abbyy.Core</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftVision</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="518,2337.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="TC_Computer_Vision" sap:VirtualizedContainerService.HintSize="476,2183.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="extracted_Text" />
+        <Variable x:TypeArguments="x:String" Name="cv_extracted_text" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[Environment.CurrentDirectory + &quot;\RPA Developer Advanced Certificate.pdf&quot;]" sap:VirtualizedContainerService.HintSize="434,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+      <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Set Focus 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+        <ui:SetFocus.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa6c4426-12d8-4c2f-86b2-10529e0c90ca" InformativeScreenshot="942090f03136e8730866e4f9826e4436" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='RPA Developer Advanced Certificate.pdf - Adobe Acrobat Reader DC' /&gt;" WaitForReady="INTERACTIVE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:SetFocus.Target>
+      </ui:SetFocus>
+      <Sequence DisplayName="UiPath.Core.Activities.GetOCRText" sap:VirtualizedContainerService.HintSize="434,665.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+        <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'AVL_AVView'" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+          <ui:GetOCRText.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" />
+            </ActivityFunc>
+          </ui:GetOCRText.OCREngine>
+          <ui:GetOCRText.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8c5869a5-6f1d-4778-aac2-e9b1af502db4" InformativeScreenshot="0a52eec83bb1c49ffdd2af54cab09ee2" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='RPA Developer Advanced Certificate.pdf - Adobe Acrobat Reader DC' /&gt;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:GetOCRText.Target>
+          <ui:GetOCRText.Text>
+            <OutArgument x:TypeArguments="x:String">[extracted_Text]</OutArgument>
+          </ui:GetOCRText.Text>
+        </ui:GetOCRText>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;**** UiPath.Core.Activities.GetOCRText - Tesseract OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
+        <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'AVL_AVView'" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="GetOCRText_2">
+          <ui:GetOCRText.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_3" Image="[Image]" Text="[extracted_Text]" />
+            </ActivityFunc>
+          </ui:GetOCRText.OCREngine>
+          <ui:GetOCRText.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8c5869a5-6f1d-4778-aac2-e9b1af502db4" InformativeScreenshot="0a52eec83bb1c49ffdd2af54cab09ee2" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='RPA Developer Advanced Certificate.pdf - Adobe Acrobat Reader DC' /&gt;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+            </ui:Target>
+          </ui:GetOCRText.Target>
+          <ui:GetOCRText.Text>
+            <OutArgument x:TypeArguments="x:String">[extracted_Text]</OutArgument>
+          </ui:GetOCRText.Text>
+        </ui:GetOCRText>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;**** UiPath.Core.Activities.GetOCRText - Microsoft OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
+      </Sequence>
+      <Sequence DisplayName="UiPath.PDF.Activities.ReadPDFWithOCR" sap:VirtualizedContainerService.HintSize="434,590.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ReadPDFWithOCR DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" FileName="[Environment.CurrentDirectory + &quot;\RPA Developer Advanced Certificate.pdf&quot;]" sap:VirtualizedContainerService.HintSize="334,130.666666666667" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_5" ImageDpi="150" Range="All" Text="[extracted_Text]">
+          <ui:ReadPDFWithOCR.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_4" Image="[Image]" Text="[extracted_Text]" />
+            </ActivityFunc>
+          </ui:ReadPDFWithOCR.OCREngine>
+        </ui:ReadPDFWithOCR>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;**** UiPath.PDF.Activities.ReadPDFWithOCR - Tesseract OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
+        <ui:ReadPDFWithOCR DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" FileName="[Environment.CurrentDirectory + &quot;\RPA Developer Advanced Certificate.pdf&quot;]" sap:VirtualizedContainerService.HintSize="334,130.666666666667" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_2" ImageDpi="150" Range="All" Text="[extracted_Text]">
+          <ui:ReadPDFWithOCR.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_2" Image="[Image]" Text="[extracted_Text]" />
+            </ActivityFunc>
+          </ui:ReadPDFWithOCR.OCREngine>
+        </ui:ReadPDFWithOCR>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;**** UiPath.PDF.Activities.ReadPDFWithOCR - Microssoft OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
+      </Sequence>
+      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="7TRY/sZPKYdB/EzBI8+Fbo5XBxHHKktE1SCyP2wVuX30321U/OgoSg2693eTqsoveXNeWB1pq7D+6n0QqNzYNg==" DisplayName="CV Screen Scope 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="434,482.666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V1">
+        <p:CVScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: Icon (186,90,26,20) Offset: (2,52,605,532)&quot;]" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Icon" sap:VirtualizedContainerService.HintSize="400,138" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="34de99ad9b0b1d6b2342541cc2754c6d" RefreshBefore="True" Result="[cv_extracted_text]" Version="V1">
+                <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                  <uc:CvDescriptor InformativeScreenshot="34de99ad9b0b1d6b2342541cc2754c6d" TargetOffset="2, 52, 605, 532">
+                    <uc:CvDescriptor.Target>
+                      <uc:CvElementDescriptor DesignTimeArea="186, 90, 26, 20" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAeCAYAAACv1gdQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGPSURBVFhH7ZWtkoMwFEb3BXGVuDokDofE1SFxiM4gEDgcL8bOYeYydyFpQkhLxYozUMjPab6b8JMkyfyt/MuFYpVL03SuquoSmBsHoxwvx3Gcp2m6BObGwSiHvanTJ8HBKde27brc74a5Dsk9n8/d+3dxWA7odLvddu1iwdhN0/yZ00uu67rlSpHe7/dd27MwpswhV/CS474oivU396Y+IeR5vp4KZVnu5vWS4xn/cBiG5Vld17s+R3k8HstYyGVZtjwLlgNqQ4qWCELqcDuGHLhwSk4w/WsfXKsfRQ6oPV0vpjYa3d5Wt9HkYLsStpj1Sr/a8VHlQJ9R2xrinT4mXDUaXQ6IVdqzOhwRrJDE6DtOVDm9asSLpBbinv6yeq4vTTQ5XW8IyqTEyg4GiZh31CRtEbbt8ChyOkafnSroHWsa95TcNsZXO88GfWwxB8vZYgzBFnOQXGiMLrYxH5br+365hsboQscsyYCXHJyN0YWOWfCWuwJkjXLUgqnDJ8HBKAfysb4C5sbBKnc9yfwLKjbhh9ZYMhwAAAAASUVORK5CYII=" />
+                    </uc:CvDescriptor.Target>
+                  </uc:CvDescriptor>
+                </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+              </p:CvGetTextWithDescriptor>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="400,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[&quot;**** UiPath.CV.Activities.CVScope - Microssoft OCR ****&quot; + Environment.NewLine + Environment.NewLine +  cv_extracted_text.ToString]" />
+            </Sequence>
+          </ActivityAction>
+        </p:CVScope.Body>
+        <p:CVScope.DesignTimeCache>
+          <uc:CVCache InformativeScreenshot="a1e1167bbae85a9528f31ff4f5561f66" LogicalPosition="0, 0" OcrText="RPA Developer Advanced Certificate.pdf Adobe Acrobat Reader DC&#xD;&#xA;File Edit View Window Help&#xD;&#xA;Home Tools RPA Developer Adv... x&#xD;&#xA;Opath Developer Advanced&#xD;&#xA;Certificate of Completion&#xD;&#xA;Proudly presented to:&#xD;&#xA;Nishant Gahlot&#xD;&#xA;This Certificate of Completion proves that the user has completed the UiPath RPA Developer exam.&#xD;&#xA;The graduate has tested on UiPath practices and demonstrated their application to develop a functional software rotX)t. Reopen closed PDFs x&#xD;&#xA;A Sign In&#xD;&#xA;Share&#xD;&#xA;x&#xD;&#xA;Your last Acrobat Reader session ended&#xD;&#xA;abruptly. Click Restore to reopen the&#xD;&#xA;PDFs from the last session. Restore&#xD;&#xA;or Excel Online&#xD;&#xA;Select PDF File&#xD;&#xA;RPA Develop...ificate.pdf&#xD;&#xA;Convert to&#xD;&#xA;Microsoft Word (*.docx)&#xD;&#xA;Document Language:&#xD;&#xA;English (U.S.) Change x&#xD;&#xA;2020-03-28&#xD;&#xA;Date Of issue Tom Clancy&#xD;&#xA;SVP of Learning 185469931841234921 Create, edit and sign PDF&#xD;&#xA;forms &amp; agreements&#xD;&#xA;Start Free Trial" Position="0, 0" ScaleFactor="1.5" ScreenshotGuid="fdb91342-c11a-48d7-817f-737ea0f02a27" ServerVersion="1">
+            <uc:CVCache.CvUiElements>
+              <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
+                <uc:CvElementInfo Category="Icon" Region="53, 86, 29, 28" />
+                <uc:CvElementInfo Category="Icon" Region="927, 86, 27, 27" />
+                <uc:CvElementInfo Category="Icon" Region="1150, 47, 23, 24" />
+                <uc:CvElementInfo Category="Icon" Region="971, 86, 28, 28" />
+                <uc:CvElementInfo Category="Icon" Region="98, 88, 26, 25" />
+                <uc:CvElementInfo Category="Icon" Region="882, 86, 28, 28" />
+                <uc:CvElementInfo Category="Icon" Region="775, 87, 26, 28" />
+                <uc:CvElementInfo Category="Icon" Region="502, 86, 26, 28" />
+                <uc:CvElementInfo Category="Icon" Region="840, 88, 25, 26" />
+                <uc:CvElementInfo Category="Icon" Region="12, 88, 24, 24" />
+                <uc:CvElementInfo Category="Icon" Region="1181, 90, 22, 20" />
+                <uc:CvElementInfo Category="Icon" Region="720, 86, 23, 26" />
+                <uc:CvElementInfo Category="Icon" Region="141, 86, 26, 26" />
+                <uc:CvElementInfo Category="Icon" Region="230, 87, 28, 26" />
+                <uc:CvElementInfo Category="Button" Region="1166, 83, 100, 34" />
+                <uc:CvElementInfo Category="Button" Region="1089, 608, 154, 44" />
+                <uc:CvElementInfo Category="Icon" Region="461, 87, 20, 26" />
+                <uc:CvElementInfo Category="Button" Region="1067, 355, 182, 30" />
+                <uc:CvElementInfo Category="CloseButton" Region="1247, 2, 17, 16" />
+                <uc:CvElementInfo Category="MinimizeButton" Region="1154, 3, 17, 14" />
+                <uc:CvElementInfo Category="CloseButton" Region="308, 53, 13, 13" />
+                <uc:CvElementInfo Category="Button" Region="152, 43, 178, 34" />
+                <uc:CvElementInfo Category="Icon" Region="186, 90, 26, 20" />
+                <uc:CvElementInfo Category="CloseButton" Region="1219, 168, 20, 20" />
+                <uc:CvElementInfo Category="MaximizeButton" Region="1200, 2, 17, 16" />
+                <uc:CvElementInfo Category="Icon" Region="590, 87, 26, 25" />
+                <uc:CvElementInfo Category="CloseButton" Region="1226, 362, 19, 19" />
+                <uc:CvElementInfo Category="ArrowButton" Region="742, 93, 14, 14" />
+                <uc:CvElementInfo Category="ArrowButton" Region="1016, 664, 16, 14" />
+                <uc:CvElementInfo Category="Icon" Region="546, 86, 25, 26" />
+                <uc:CvElementInfo Category="Icon" Region="1109, 48, 23, 23" />
+                <uc:CvElementInfo Category="ArrowButton" Region="1016, 125, 17, 16" />
+                <uc:CvElementInfo Category="Icon" Region="319, 88, 25, 25" />
+                <uc:CvElementInfo Category="ArrowButton" Region="1263, 505, 16, 17" />
+                <uc:CvElementInfo Category="ArrowButton" Region="1262, 188, 17, 18" />
+                <uc:CvElementInfo Category="Button" Region="276, 88, 25, 24" />
+                <uc:CvElementInfo Category="Icon" Region="0, 1, 16, 18" />
+                <uc:CvElementInfo Category="Icon" Region="275, 88, 24, 24" />
+                <uc:CvElementInfo Category="ArrowButton" Region="2, 394, 12, 16" />
+                <uc:CvElementInfo Category="Cell" Region="124, 496, 58, 22" />
+                <uc:CvElementInfo Category="Cell" Region="124, 517, 59, 21" />
+                <uc:CvElementInfo Category="Cell" Region="134, 596, 46, 22" />
+                <uc:CvElementInfo Category="Cell" Region="135, 578, 46, 21" />
+                <uc:CvElementInfo Category="Cell" Region="123, 395, 61, 22" />
+                <uc:CvElementInfo Category="Cell" Region="138, 476, 21, 22" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="320, 88, 24, 25" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="546, 86, 26, 27" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1108, 48, 24, 24" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="2, 394, 12, 14" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1035, 394, 12, 16" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="187, 90, 25, 20" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="590, 87, 25, 25" />
+                <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1034, 393, 13, 16" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1227, 363, 17, 16" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="366, 91, 22, 22" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="125, 134, 8, 8" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1066, 428, 184, 31" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="880, 135, 8, 7" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="388, 83, 47, 36" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="369, 582, 100, 17" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="366, 86, 55, 30" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1201, 3, 15, 14" />
+                <uc:CvElementInfo Category="MinimizeButton" Confidence="Runtime" Region="546, 86, 26, 26" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="389, 86, 43, 30" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="366, 90, 22, 24" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="231, 176, 22, 23" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="1064, 355, 187, 31" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1, 0, 15, 20" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="12, 88, 24, 24" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="642, 93, 28, 16" />
+                <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="460, 87, 20, 26" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="230, 86, 28, 28" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="369, 92, 16, 19" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1247, 3, 17, 17" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="902, 134, 7, 8" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="140, 87, 27, 26" />
+                <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="546, 86, 26, 26" />
+                <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="76, 46, 61, 28" />
+                <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="821, 378, 66, 27" />
+                <uc:CvElementInfo Category="MinimizeButton" Confidence="Runtime" Region="881, 135, 7, 7" />
+                <uc:CvElementInfo Category="InputBox" Region="1066, 428, 186, 31" />
+                <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="633, 84, 69, 31" />
+                <uc:CvElementInfo Category="ArrowButton" Region="681, 93, 14, 14" />
+                <uc:CvElementInfo Category="ArrowButton" Region="1224, 432, 19, 22" />
+              </scg:List>
+            </uc:CVCache.CvUiElements>
+            <uc:CVCache.OcrTexts>
+              <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="256">
+                <uc:OcrTextInfo Region="21, 7, 20, 8" Text="RPA" />
+                <uc:OcrTextInfo Region="46, 6, 52, 12" Text="Developer" />
+                <uc:OcrTextInfo Region="102, 6, 52, 9" Text="Advanced" />
+                <uc:OcrTextInfo Region="159, 6, 72, 12" Text="Certificate.pdf" />
+                <uc:OcrTextInfo Region="243, 6, 36, 9" Text="Adobe" />
+                <uc:OcrTextInfo Region="282, 6, 42, 9" Text="Acrobat" />
+                <uc:OcrTextInfo Region="328, 6, 35, 9" Text="Reader" />
+                <uc:OcrTextInfo Region="368, 7, 14, 8" Text="DC" />
+                <uc:OcrTextInfo Region="7, 28, 16, 9" Text="File" />
+                <uc:OcrTextInfo Region="38, 28, 19, 9" Text="Edit" />
+                <uc:OcrTextInfo Region="70, 28, 24, 8" Text="View" />
+                <uc:OcrTextInfo Region="108, 28, 44, 9" Text="Window" />
+                <uc:OcrTextInfo Region="166, 28, 23, 12" Text="Help" />
+                <uc:OcrTextInfo Region="16, 54, 41, 11" Text="Home" />
+                <uc:OcrTextInfo Region="85, 54, 36, 12" Text="Tools" />
+                <uc:OcrTextInfo Region="175, 56, 24, 10" Text="RPA" />
+                <uc:OcrTextInfo Region="204, 55, 61, 14" Text="Developer" />
+                <uc:OcrTextInfo Region="270, 55, 33, 10" Text="Adv..." />
+                <uc:OcrTextInfo Region="312, 57, 6, 6" Text="x" />
+                <uc:OcrTextInfo Region="233, 179, 58, 21" Text="Opath" />
+                <uc:OcrTextInfo Region="335, 240, 205, 48" Text="Developer" />
+                <uc:OcrTextInfo Region="552, 240, 207, 38" Text="Advanced" />
+                <uc:OcrTextInfo Region="230, 295, 140, 27" Text="Certificate" />
+                <uc:OcrTextInfo Region="382, 295, 26, 27" Text="of" />
+                <uc:OcrTextInfo Region="418, 295, 161, 34" Text="Completion" />
+                <uc:OcrTextInfo Region="231, 381, 31, 9" Text="Proudly" />
+                <uc:OcrTextInfo Region="265, 381, 41, 9" Text="presented" />
+                <uc:OcrTextInfo Region="309, 382, 10, 6" Text="to:" />
+                <uc:OcrTextInfo Region="232, 395, 134, 27" Text="Nishant" />
+                <uc:OcrTextInfo Region="378, 394, 115, 28" Text="Gahlot" />
+                <uc:OcrTextInfo Region="230, 452, 17, 7" Text="This" />
+                <uc:OcrTextInfo Region="250, 452, 42, 7" Text="Certificate" />
+                <uc:OcrTextInfo Region="296, 452, 8, 7" Text="of" />
+                <uc:OcrTextInfo Region="306, 452, 47, 9" Text="Completion" />
+                <uc:OcrTextInfo Region="357, 454, 27, 7" Text="proves" />
+                <uc:OcrTextInfo Region="387, 452, 15, 7" Text="that" />
+                <uc:OcrTextInfo Region="405, 452, 13, 7" Text="the" />
+                <uc:OcrTextInfo Region="422, 454, 17, 5" Text="user" />
+                <uc:OcrTextInfo Region="442, 452, 14, 7" Text="has" />
+                <uc:OcrTextInfo Region="508, 452, 43, 9" Text="completed" />
+                <uc:OcrTextInfo Region="554, 452, 12, 7" Text="the" />
+                <uc:OcrTextInfo Region="570, 452, 26, 7" Text="UiPath" />
+                <uc:OcrTextInfo Region="600, 452, 18, 7" Text="RPA" />
+                <uc:OcrTextInfo Region="621, 452, 41, 9" Text="Developer" />
+                <uc:OcrTextInfo Region="665, 454, 24, 5" Text="exam." />
+                <uc:OcrTextInfo Region="230, 463, 16, 7" Text="The" />
+                <uc:OcrTextInfo Region="249, 463, 36, 9" Text="graduate" />
+                <uc:OcrTextInfo Region="288, 463, 14, 7" Text="has" />
+                <uc:OcrTextInfo Region="329, 463, 25, 7" Text="tested" />
+                <uc:OcrTextInfo Region="358, 465, 10, 5" Text="on" />
+                <uc:OcrTextInfo Region="371, 463, 26, 7" Text="UiPath" />
+                <uc:OcrTextInfo Region="422, 463, 38, 9" Text="practices" />
+                <uc:OcrTextInfo Region="462, 463, 15, 7" Text="and" />
+                <uc:OcrTextInfo Region="480, 463, 57, 7" Text="demonstrated" />
+                <uc:OcrTextInfo Region="541, 463, 18, 7" Text="their" />
+                <uc:OcrTextInfo Region="562, 463, 44, 9" Text="application" />
+                <uc:OcrTextInfo Region="609, 464, 8, 6" Text="to" />
+                <uc:OcrTextInfo Region="620, 463, 32, 9" Text="develop" />
+                <uc:OcrTextInfo Region="656, 465, 4, 5" Text="a" />
+                <uc:OcrTextInfo Region="663, 463, 40, 7" Text="functional" />
+                <uc:OcrTextInfo Region="706, 463, 36, 7" Text="software" />
+                <uc:OcrTextInfo Region="745, 463, 24, 7" Text="rotX)t." />
+                <uc:OcrTextInfo Region="982, 174, 50, 12" Text="Reopen" />
+                <uc:OcrTextInfo Region="1036, 174, 44, 10" Text="closed" />
+                <uc:OcrTextInfo Region="1085, 174, 35, 10" Text="PDFs" />
+                <uc:OcrTextInfo Region="1250, 6, 10, 10" Text="x" />
+                <uc:OcrTextInfo Region="1152, 51, 16, 16" Text="A" />
+                <uc:OcrTextInfo Region="1201, 55, 32, 15" Text="Sign" />
+                <uc:OcrTextInfo Region="1241, 55, 12, 11" Text="In" />
+                <uc:OcrTextInfo Region="1210, 95, 39, 11" Text="Share" />
+                <uc:OcrTextInfo Region="1222, 174, 12, 12" Text="x" />
+                <uc:OcrTextInfo Region="981, 200, 28, 10" Text="Your" />
+                <uc:OcrTextInfo Region="1013, 199, 20, 10" Text="last" />
+                <uc:OcrTextInfo Region="1038, 199, 48, 10" Text="Acrobat" />
+                <uc:OcrTextInfo Region="1091, 199, 42, 10" Text="Reader" />
+                <uc:OcrTextInfo Region="1137, 199, 44, 10" Text="session" />
+                <uc:OcrTextInfo Region="1186, 199, 38, 10" Text="ended" />
+                <uc:OcrTextInfo Region="982, 219, 53, 14" Text="abruptly." />
+                <uc:OcrTextInfo Region="1040, 219, 28, 10" Text="Click" />
+                <uc:OcrTextInfo Region="1073, 220, 45, 10" Text="Restore" />
+                <uc:OcrTextInfo Region="1122, 220, 12, 9" Text="to" />
+                <uc:OcrTextInfo Region="1140, 222, 42, 10" Text="reopen" />
+                <uc:OcrTextInfo Region="1186, 219, 20, 10" Text="the" />
+                <uc:OcrTextInfo Region="982, 240, 28, 10" Text="PDFs" />
+                <uc:OcrTextInfo Region="1016, 239, 28, 10" Text="from" />
+                <uc:OcrTextInfo Region="1049, 239, 19, 10" Text="the" />
+                <uc:OcrTextInfo Region="1074, 239, 20, 10" Text="last" />
+                <uc:OcrTextInfo Region="1098, 239, 47, 10" Text="session." />
+                <uc:OcrTextInfo Region="1179, 268, 54, 11" Text="Restore" />
+                <uc:OcrTextInfo Region="1065, 302, 12, 6" Text="or" />
+                <uc:OcrTextInfo Region="1081, 299, 27, 10" Text="Excel" />
+                <uc:OcrTextInfo Region="1113, 299, 36, 10" Text="Online" />
+                <uc:OcrTextInfo Region="1065, 336, 34, 10" Text="Select" />
+                <uc:OcrTextInfo Region="1103, 337, 22, 9" Text="PDF" />
+                <uc:OcrTextInfo Region="1130, 336, 18, 10" Text="File" />
+                <uc:OcrTextInfo Region="1076, 367, 22, 9" Text="RPA" />
+                <uc:OcrTextInfo Region="1102, 366, 112, 13" Text="Develop...ificate.pdf" />
+                <uc:OcrTextInfo Region="1065, 409, 44, 9" Text="Convert" />
+                <uc:OcrTextInfo Region="1113, 410, 12, 8" Text="to" />
+                <uc:OcrTextInfo Region="1076, 440, 54, 10" Text="Microsoft" />
+                <uc:OcrTextInfo Region="1133, 440, 30, 10" Text="Word" />
+                <uc:OcrTextInfo Region="1168, 440, 42, 12" Text="(*.docx)" />
+                <uc:OcrTextInfo Region="1066, 478, 59, 9" Text="Document" />
+                <uc:OcrTextInfo Region="1129, 478, 58, 12" Text="Language:" />
+                <uc:OcrTextInfo Region="1066, 499, 39, 13" Text="English" />
+                <uc:OcrTextInfo Region="1110, 500, 28, 11" Text="(U.S.)" />
+                <uc:OcrTextInfo Region="1146, 499, 43, 13" Text="Change" />
+                <uc:OcrTextInfo Region="1229, 366, 11, 11" Text="x" />
+                <uc:OcrTextInfo Region="232, 579, 70, 10" Text="2020-03-28" />
+                <uc:OcrTextInfo Region="232, 604, 17, 6" Text="Date" />
+                <uc:OcrTextInfo Region="252, 604, 7, 6" Text="Of" />
+                <uc:OcrTextInfo Region="263, 604, 20, 6" Text="issue" />
+                <uc:OcrTextInfo Region="371, 604, 16, 6" Text="Tom" />
+                <uc:OcrTextInfo Region="391, 604, 27, 8" Text="Clancy" />
+                <uc:OcrTextInfo Region="372, 614, 16, 6" Text="SVP" />
+                <uc:OcrTextInfo Region="391, 614, 7, 6" Text="of" />
+                <uc:OcrTextInfo Region="402, 614, 34, 8" Text="Learning" />
+                <uc:OcrTextInfo Region="496, 656, 73, 5" Text="185469931841234921" />
+                <uc:OcrTextInfo Region="1088, 561, 39, 10" Text="Create," />
+                <uc:OcrTextInfo Region="1133, 560, 22, 9" Text="edit" />
+                <uc:OcrTextInfo Region="1160, 560, 20, 9" Text="and" />
+                <uc:OcrTextInfo Region="1186, 561, 24, 11" Text="sign" />
+                <uc:OcrTextInfo Region="1215, 561, 22, 8" Text="PDF" />
+                <uc:OcrTextInfo Region="1104, 577, 34, 9" Text="forms" />
+                <uc:OcrTextInfo Region="1143, 578, 10, 8" Text="&amp;" />
+                <uc:OcrTextInfo Region="1157, 578, 68, 10" Text="agreements" />
+                <uc:OcrTextInfo Region="1129, 626, 23, 8" Text="Start" />
+                <uc:OcrTextInfo Region="1156, 626, 21, 8" Text="Free" />
+                <uc:OcrTextInfo Region="1181, 625, 19, 9" Text="Trial" />
+              </scg:List>
+            </uc:CVCache.OcrTexts>
+          </uc:CVCache>
+        </p:CVScope.DesignTimeCache>
+        <p:CVScope.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+            <ui:MicrosoftOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_4" Image="[Image]" Language="en" Profile="None" Scale="1" />
+          </ActivityFunc>
+        </p:CVScope.OCREngine>
+        <p:CVScope.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bc366d5d-b116-40b2-8bac-d774b39132f3" InformativeScreenshot="6dc6a8f3e41b67916a339e4ec3ec020e" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='RPA Developer Advanced Certificate.pdf - Adobe Acrobat Reader DC' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </p:CVScope.Target>
+      </p:CVScope>
     </Sequence>
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="AcroRd32" />
+  </Sequence>
 </Activity>
