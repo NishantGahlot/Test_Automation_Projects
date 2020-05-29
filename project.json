@@ -55,7 +55,12 @@
       {
         "editingStatus": "InProgress",
         "testCaseId": "5530faad-b791-47a1-a011-ef2dd638d7f3",
-        "fileName": "TC _ Get Cell Color.xaml"
+        "fileName": "TC _ GetCellColor.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "def3f024-469c-4b0c-982e-45580b4f4715",
+        "fileName": "TC_RestAPI.xaml"
       }
     ]
   },
