@@ -1,8 +1,9 @@
 {
-	"id": 24,
-	"email": "nishantgahlot18@gmail.co,",
-	"first_name": "Nishant",
-	"last_name": "Gahlot",
-	"name": "Nishant Gahlot",
-	"job": "RPA Developer"
+	"id" : 29052020,
+	"email" : "apiintegrations@xyz.com,",
+	"first_name" : "RESTful",
+	"last_name" : "API",
+	"name" : "RESTful API",
+	"job" : "RPA Developer",
+	"date": "29-05-2020"
 }
