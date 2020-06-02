@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC_Computer_Vision" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="910,902" sap2010:WorkflowViewState.IdRef="TC_Computer_Vision_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_Computer_Vision" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="910,1214" sap2010:WorkflowViewState.IdRef="TC_Computer_Vision_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="58">
+    <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -34,7 +34,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -65,28 +65,30 @@
       <AssemblyReference>UiPath.Abbyy.Core</AssemblyReference>
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftVision</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="518,2337.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap:VirtualizedContainerService.HintSize="418,1049.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="TC_Computer_Vision" sap:VirtualizedContainerService.HintSize="476,2183.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="TC_OCRs" sap:VirtualizedContainerService.HintSize="376,895.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="extracted_Text" />
         <Variable x:TypeArguments="x:String" Name="cv_extracted_text" />
+        <Variable x:TypeArguments="ui:Image" Name="image_ToUse" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[Environment.CurrentDirectory + &quot;\RPA Developer Advanced Certificate.pdf&quot;]" sap:VirtualizedContainerService.HintSize="434,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-      <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Set Focus 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+      <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[Environment.CurrentDirectory + &quot;\RPA Developer Advanced Certificate.pdf&quot;]" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+      <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Set Focus 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="SetFocus_1">
         <ui:SetFocus.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa6c4426-12d8-4c2f-86b2-10529e0c90ca" InformativeScreenshot="942090f03136e8730866e4f9826e4436" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='RPA Developer Advanced Certificate.pdf - Adobe Acrobat Reader DC' /&gt;" WaitForReady="INTERACTIVE">
             <ui:Target.TimeoutMS>
@@ -94,11 +96,17 @@
             </ui:Target.TimeoutMS>
           </ui:Target>
         </ui:SetFocus.Target>
-      </ui:SetFocus>
-      <Sequence DisplayName="UiPath.Core.Activities.GetOCRText" sap:VirtualizedContainerService.HintSize="434,665.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:SetFocus>
+      <Sequence DisplayName="UiPath.Core.Activities.GetOCRText" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -145,10 +153,10 @@
         </ui:GetOCRText>
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;**** UiPath.Core.Activities.GetOCRText - Microsoft OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
       </Sequence>
-      <Sequence DisplayName="UiPath.PDF.Activities.ReadPDFWithOCR" sap:VirtualizedContainerService.HintSize="434,590.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="UiPath.PDF.Activities.ReadPDFWithOCR" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -175,7 +183,7 @@
         </ui:ReadPDFWithOCR>
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;**** UiPath.PDF.Activities.ReadPDFWithOCR - Microssoft OCR ****&quot; + Environment.NewLine + Environment.NewLine + extracted_Text.ToString]" />
       </Sequence>
-      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="7TRY/sZPKYdB/EzBI8+Fbo5XBxHHKktE1SCyP2wVuX30321U/OgoSg2693eTqsoveXNeWB1pq7D+6n0QqNzYNg==" DisplayName="CV Screen Scope 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="434,482.666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V1">
+      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="7TRY/sZPKYdB/EzBI8+Fbo5XBxHHKktE1SCyP2wVuX30321U/OgoSg2693eTqsoveXNeWB1pq7D+6n0QqNzYNg==" DisplayName="CV Screen Scope 'AcroRd32.exe RPA'" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V1">
         <p:CVScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -196,7 +204,7 @@
           </ActivityAction>
         </p:CVScope.Body>
         <p:CVScope.DesignTimeCache>
-          <uc:CVCache InformativeScreenshot="a1e1167bbae85a9528f31ff4f5561f66" LogicalPosition="0, 0" OcrText="RPA Developer Advanced Certificate.pdf Adobe Acrobat Reader DC&#xD;&#xA;File Edit View Window Help&#xD;&#xA;Home Tools RPA Developer Adv... x&#xD;&#xA;Opath Developer Advanced&#xD;&#xA;Certificate of Completion&#xD;&#xA;Proudly presented to:&#xD;&#xA;Nishant Gahlot&#xD;&#xA;This Certificate of Completion proves that the user has completed the UiPath RPA Developer exam.&#xD;&#xA;The graduate has tested on UiPath practices and demonstrated their application to develop a functional software rotX)t. Reopen closed PDFs x&#xD;&#xA;A Sign In&#xD;&#xA;Share&#xD;&#xA;x&#xD;&#xA;Your last Acrobat Reader session ended&#xD;&#xA;abruptly. Click Restore to reopen the&#xD;&#xA;PDFs from the last session. Restore&#xD;&#xA;or Excel Online&#xD;&#xA;Select PDF File&#xD;&#xA;RPA Develop...ificate.pdf&#xD;&#xA;Convert to&#xD;&#xA;Microsoft Word (*.docx)&#xD;&#xA;Document Language:&#xD;&#xA;English (U.S.) Change x&#xD;&#xA;2020-03-28&#xD;&#xA;Date Of issue Tom Clancy&#xD;&#xA;SVP of Learning 185469931841234921 Create, edit and sign PDF&#xD;&#xA;forms &amp; agreements&#xD;&#xA;Start Free Trial" Position="0, 0" ScaleFactor="1.5" ScreenshotGuid="fdb91342-c11a-48d7-817f-737ea0f02a27" ServerVersion="1">
+          <uc:CVCache InformativeScreenshot="a1e1167bbae85a9528f31ff4f5561f66" LogicalPosition="0, 0" OcrText="RPA Developer Advanced Certificate.pdf Adobe Acrobat Reader DC&#xA;File Edit View Window Help&#xA;Home Tools RPA Developer Adv... x&#xA;Opath Developer Advanced&#xA;Certificate of Completion&#xA;Proudly presented to:&#xA;Nishant Gahlot&#xA;This Certificate of Completion proves that the user has completed the UiPath RPA Developer exam.&#xA;The graduate has tested on UiPath practices and demonstrated their application to develop a functional software rotX)t. Reopen closed PDFs x&#xA;A Sign In&#xA;Share&#xA;x&#xA;Your last Acrobat Reader session ended&#xA;abruptly. Click Restore to reopen the&#xA;PDFs from the last session. Restore&#xA;or Excel Online&#xA;Select PDF File&#xA;RPA Develop...ificate.pdf&#xA;Convert to&#xA;Microsoft Word (*.docx)&#xA;Document Language:&#xA;English (U.S.) Change x&#xA;2020-03-28&#xA;Date Of issue Tom Clancy&#xA;SVP of Learning 185469931841234921 Create, edit and sign PDF&#xA;forms &amp; agreements&#xA;Start Free Trial" Position="0, 0" ScaleFactor="1.5" ScreenshotGuid="fdb91342-c11a-48d7-817f-737ea0f02a27" ServerVersion="1">
             <uc:CVCache.CvUiElements>
               <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
                 <uc:CvElementInfo Category="Icon" Region="53, 86, 29, 28" />
@@ -435,8 +443,17 @@
             </ui:Target.TimeoutMS>
           </ui:Target>
         </p:CVScope.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </p:CVScope>
+      <ui:LoadImage DisplayName="Load Image" FileName="RPA Developer Advanced Certificate.JPG" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="LoadImage_2" Image="[image_ToUse]" />
+      <ui:AbbyyCloudOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" ApplicationID="8e1fe52e-99d6-4a8b-a2be-c68e43b1d1ee" ComputeSkewAngle="False" DisplayName="Abbyy Cloud OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AbbyyCloudOCR_1" Image="[image_ToUse]" Password="JdfSECywpsdtP4iuBFz5mt1h" Profile="None" ServerUrl="https://cloud-westus.ocrsdk.com" Text="[extracted_Text]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[extracted_Text.ToString]" />
     </Sequence>
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="AcroRd32" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="AcroRd32" />
   </Sequence>
 </Activity>
