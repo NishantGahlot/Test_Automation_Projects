@@ -25,6 +25,7 @@
     "UiPath.Script.Activities": "[1.0.6710.16240]",
     "UiPath.System.Activities": "[20.4.0]",
     "UiPath.System.Extended.Activities": "[1.0.1]",
+    "UiPath.Terminal.Activities": "[1.3.4]",
     "UiPath.Testing.Activities": "[1.0.0]",
     "UiPath.UIAutomation.Activities": "[20.4.1]",
     "UiPath.UIAutomationNext.Activities": "[20.4.1]",
@@ -70,6 +71,11 @@
         "editingStatus": "InProgress",
         "testCaseId": "9869b97a-be12-42e8-92f6-573e96742504",
         "fileName": "TC_OCRs.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "361cdfaa-2d94-4e9e-97f1-fc3e92e151b3",
+        "fileName": "TC_PageLoadCheck.xaml"
       }
     ]
   },
