@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="TestCase" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1552.66666666667,2610.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="25">
+    <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -26,10 +26,13 @@
       <x:String>UiPath.CV</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.Enums</x:String>
+      <x:String>UiPath.Abbyy.Core.FlexiCapture.ValidationStationAdapters</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -55,11 +58,11 @@
       <AssemblyReference>UiPath.MobileAutomation</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Abbyy.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="1562.66666666667,2446" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="textToDisplay" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="row_num" />
       <Variable x:TypeArguments="x:String" Name="color_input" />
       <Variable x:TypeArguments="sd:Color" Name="color_name" />
@@ -103,16 +106,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Invalid color name : &quot; + color_use.Name.ToString.ToUpper + Environment.NewLine +&#xD;&#xA;color_use.Name.ToString.ToUpper + &quot; has [A,R,G,B] values =[&quot; + color_use.A.ToString + &quot;,&quot; + color_use.R.ToString + &quot;,&quot; + color_use.G.ToString + &quot;,&quot; + color_use.B.ToString + &quot;]&quot;]" />
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Invalid color name : &quot; + color_use.Name.ToString.ToUpper + Environment.NewLine +&#xA;color_use.Name.ToString.ToUpper + &quot; has [A,R,G,B] values =[&quot; + color_use.A.ToString + &quot;,&quot; + color_use.R.ToString + &quot;,&quot; + color_use.G.ToString + &quot;,&quot; + color_use.B.ToString + &quot;]&quot;]" />
             </If.Then>
             <If.Else>
               <Sequence sap:VirtualizedContainerService.HintSize="718.666666666667,1720" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="color_found">
-                    <Variable.Default>
-                      <Literal x:TypeArguments="x:Boolean" />
-                    </Variable.Default>
-                  </Variable>
+                  <Variable x:TypeArguments="x:Boolean" Default="False" Name="color_found" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -160,7 +159,7 @@
                     <InArgument x:TypeArguments="x:Int32">1</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="676.666666666667,1066" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile Condition="[Not color_found]" DisplayName="While" sap:VirtualizedContainerService.HintSize="676.666666666667,1066" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                   <ui:InterruptibleWhile.Body>
                     <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="640,896.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
@@ -195,7 +194,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[color_use.Name.ToString.ToUpper + &quot; color found at cell A&quot; + row_num.ToString + &quot; under &quot; + Environment.CurrentDirectory + &quot;\Color_Cell.xlsx , Worksheet named &quot; + wkbk.GetWorkbookSheet(0).ToString + Environment. NewLine + &#xD;&#xA;&quot;Cell Color [A,R,G,B]=[&quot; + color_name.A.ToString + &quot;,&quot; + color_name.R.ToString + &quot;,&quot; + color_name.G.ToString + &quot;,&quot; + color_name.B.ToString + &quot;]&quot; + Environment.NewLine +&#xD;&#xA;&quot;Color Entered [A,R,G,B]=[&quot; + color_use.A.ToString + &quot;,&quot; + color_use.R.ToString + &quot;,&quot; + color_use.G.ToString + &quot;,&quot; + color_use.B.ToString + &quot;]&quot;]" />
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[color_use.Name.ToString.ToUpper + &quot; color found at cell A&quot; + row_num.ToString + &quot; under &quot; + Environment.CurrentDirectory + &quot;\Color_Cell.xlsx , Worksheet named &quot; + wkbk.GetWorkbookSheet(0).ToString + Environment. NewLine + &#xA;&quot;Cell Color [A,R,G,B]=[&quot; + color_name.A.ToString + &quot;,&quot; + color_name.R.ToString + &quot;,&quot; + color_name.G.ToString + &quot;,&quot; + color_name.B.ToString + &quot;]&quot; + Environment.NewLine +&#xA;&quot;Color Entered [A,R,G,B]=[&quot; + color_use.A.ToString + &quot;,&quot; + color_use.R.ToString + &quot;,&quot; + color_use.G.ToString + &quot;,&quot; + color_use.B.ToString + &quot;]&quot;]" />
                                     <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_6">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Boolean">[color_found]</OutArgument>
@@ -227,9 +226,6 @@
                       </Assign>
                     </Sequence>
                   </ui:InterruptibleWhile.Body>
-                  <ui:InterruptibleWhile.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not color_found" />
-                  </ui:InterruptibleWhile.Condition>
                 </ui:InterruptibleWhile>
                 <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="676.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[wkbk]" />
               </Sequence>
