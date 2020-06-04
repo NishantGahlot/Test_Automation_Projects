@@ -1,5 +1,4 @@
-funtion OnLoad()
+function OnLoad()
 {
-	document.Ready();
-	return;
+	return(document.readyState);
 }
