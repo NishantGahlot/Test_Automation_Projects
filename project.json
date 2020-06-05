@@ -3,8 +3,10 @@
   "description": "Test Automation Project",
   "main": "Main.xaml",
   "dependencies": {
+    "Microsoft.Activities.Extensions": "[2.0.6.9]",
     "UiPath": "[20.4.7422.14731]",
     "UiPath.Abbyy.Activities": "[1.2.0]",
+    "UiPath.Activities.Api": "[20.4.0]",
     "UiPath.Citrix.Activities": "[1.0.2]",
     "UiPath.Cognitive.Activities": "[2.2.4]",
     "UiPath.ComplexScenarios.Activities": "[1.0.2]",
@@ -21,6 +23,7 @@
     "UiPath.OCR.Activities": "[2.1.0-preview]",
     "UiPath.PDF.Activities": "[3.2.2]",
     "UiPath.Platform": "[20.4.0]",
+    "UiPath.Robot.Api": "[20.4.0]",
     "UiPath.ScreenOCR.Activities": "[1.2.3-preview]",
     "UiPath.Script.Activities": "[1.0.6710.16240]",
     "UiPath.System.Activities": "[20.4.0]",
